@@ -1,0 +1,15 @@
+name: Addon release
+'on':
+  push:
+    branches:
+      - master
+    paths-ignore:
+      - '.github/**'
+      - '.screenshots/**'
+      - 'README.md'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  release:
+    uses: sirus-addons/workflows/.github/workflows/addon-release.yml@master
